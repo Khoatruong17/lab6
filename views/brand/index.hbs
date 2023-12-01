@@ -1,0 +1,24 @@
+<a href="/brand/add">Add new brand</a>
+<a href="/brand/deleteall" onclick="return confirm('Are you want to delete all?')">Delete</a>
+<br><br>
+<table border="1">
+   <tr>
+      <th>Brand name</th>
+      <th>Brand country</th>
+      <th colspan="2">Menu</th>
+   </tr>
+   {{#each brands }}
+   <tr>
+      <td>
+         <a href="/brand/detail/{{ _id }}">
+            {{ name }}
+         </a>
+      </td>
+      <td>{{ country }}</td>
+      <td>
+         <a href="/brand/edit/{{_id}}">Edit</a>
+         <a href="/brand/delete/{{_id}}" onclick="return confirm('Are you want to delete this phone?')">Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>

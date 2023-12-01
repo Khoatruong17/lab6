@@ -1,0 +1,32 @@
+<a href="/mobile/add">Add new mobile</a>
+<a href="/mobile/sort/asc">Sort ASC</a>
+<a href="/mobile/sort/desc">Sort DESC</a>
+<a href=""></a>
+<br><br>
+<form action="/mobile/search" method="post">
+   <input type="search" name="keyword" id="" required>
+</form>
+<br><br>
+<table border="1">
+   <tr>
+      <th>Mobile model</th>
+      <th>Mobile color</th>
+      <th>Mobile brand</th>
+      <th>Mobile image</th>
+      <th>Action</th>
+   </tr>
+   {{#each mobiles }}
+   <tr>
+      <td>{{ model }}</td>
+      <td>{{ color }}</td>
+      <td>{{ brand.name }}</td>
+      <td>
+         <img src="{{ image }}" alt="" width="100" height="120">
+      </td>
+      <td>
+         <a href="/mobile/edit/{{_id}}">Edit</a>
+         <a href="/mobile/delete/{{_id}}" onclick="return confirm('Are you want to delete this phone?')">Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>
